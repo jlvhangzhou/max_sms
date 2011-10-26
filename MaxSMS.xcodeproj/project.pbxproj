@@ -15,9 +15,11 @@
 		5903A7021457EFCA00360325 /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5903A7011457EFCA00360325 /* MSAppDelegate.m */; };
 		5903A7051457EFCA00360325 /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5903A7041457EFCA00360325 /* MSMainViewController.m */; };
 		5903A7081457EFCA00360325 /* MSFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5903A7071457EFCA00360325 /* MSFlipsideViewController.m */; };
-		5903A70B1457EFCA00360325 /* MSMainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5903A7091457EFCA00360325 /* MSMainViewController_iPhone.xib */; };
-		5903A70E1457EFCA00360325 /* MSMainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5903A70C1457EFCA00360325 /* MSMainViewController_iPad.xib */; };
-		5903A7111457EFCA00360325 /* MSFlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5903A70F1457EFCA00360325 /* MSFlipsideViewController.xib */; };
+		59E684E61457F0CC0027F64C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E684E51457F0CC0027F64C /* MainWindow.xib */; };
+		59E684E91457F0D80027F64C /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E684E81457F0D80027F64C /* MainView.xib */; };
+		59E684EB1457F0DC0027F64C /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E684EA1457F0DC0027F64C /* FlipsideView.xib */; };
+		59E684EE1457F0E90027F64C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 59E684ED1457F0E90027F64C /* README.md */; };
+		59E684F61457F2E30027F64C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59E684F51457F2E30027F64C /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,19 +27,22 @@
 		5903A6F11457EFCA00360325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5903A6F31457EFCA00360325 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5903A6F51457EFCA00360325 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		5903A6F91457EFCA00360325 /* MaxSMS-Info.plist */ = {isa = PBXFileReference; path = "MaxSMS-Info.plist"; sourceTree = "<group>"; };
+		5903A6F91457EFCA00360325 /* MaxSMS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MaxSMS-Info.plist"; sourceTree = "<group>"; };
 		5903A6FB1457EFCA00360325 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5903A6FD1457EFCA00360325 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5903A6FF1457EFCA00360325 /* MaxSMS-Prefix.pch */ = {isa = PBXFileReference; path = "MaxSMS-Prefix.pch"; sourceTree = "<group>"; };
-		5903A7001457EFCA00360325 /* MSAppDelegate.h */ = {isa = PBXFileReference; path = MSAppDelegate.h; sourceTree = "<group>"; };
+		5903A6FF1457EFCA00360325 /* MaxSMS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MaxSMS-Prefix.pch"; sourceTree = "<group>"; };
+		5903A7001457EFCA00360325 /* MSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
 		5903A7011457EFCA00360325 /* MSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
-		5903A7031457EFCA00360325 /* MSMainViewController.h */ = {isa = PBXFileReference; path = MSMainViewController.h; sourceTree = "<group>"; };
+		5903A7031457EFCA00360325 /* MSMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMainViewController.h; sourceTree = "<group>"; };
 		5903A7041457EFCA00360325 /* MSMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMainViewController.m; sourceTree = "<group>"; };
-		5903A7061457EFCA00360325 /* MSFlipsideViewController.h */ = {isa = PBXFileReference; path = MSFlipsideViewController.h; sourceTree = "<group>"; };
+		5903A7061457EFCA00360325 /* MSFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSFlipsideViewController.h; sourceTree = "<group>"; };
 		5903A7071457EFCA00360325 /* MSFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSFlipsideViewController.m; sourceTree = "<group>"; };
-		5903A70A1457EFCA00360325 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MSMainViewController_iPhone.xib; sourceTree = "<group>"; };
-		5903A70D1457EFCA00360325 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MSMainViewController_iPad.xib; sourceTree = "<group>"; };
-		5903A7101457EFCA00360325 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MSFlipsideViewController.xib; sourceTree = "<group>"; };
+		59E684E51457F0CC0027F64C /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		59E684E81457F0D80027F64C /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		59E684EA1457F0DC0027F64C /* FlipsideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
+		59E684EC1457F0E30027F64C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		59E684ED1457F0E90027F64C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		59E684F51457F2E30027F64C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +62,9 @@
 		5903A6E21457EFCA00360325 = {
 			isa = PBXGroup;
 			children = (
+				59E684F51457F2E30027F64C /* Settings.bundle */,
+				59E684EC1457F0E30027F64C /* LICENSE */,
+				59E684ED1457F0E90027F64C /* README.md */,
 				5903A6F71457EFCA00360325 /* MaxSMS */,
 				5903A6F01457EFCA00360325 /* Frameworks */,
 				5903A6EE1457EFCA00360325 /* Products */,
@@ -90,9 +98,9 @@
 				5903A7041457EFCA00360325 /* MSMainViewController.m */,
 				5903A7061457EFCA00360325 /* MSFlipsideViewController.h */,
 				5903A7071457EFCA00360325 /* MSFlipsideViewController.m */,
-				5903A7091457EFCA00360325 /* MSMainViewController_iPhone.xib */,
-				5903A70C1457EFCA00360325 /* MSMainViewController_iPad.xib */,
-				5903A70F1457EFCA00360325 /* MSFlipsideViewController.xib */,
+				59E684E51457F0CC0027F64C /* MainWindow.xib */,
+				59E684E81457F0D80027F64C /* MainView.xib */,
+				59E684EA1457F0DC0027F64C /* FlipsideView.xib */,
 				5903A6F81457EFCA00360325 /* Supporting Files */,
 			);
 			path = MaxSMS;
@@ -161,9 +169,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5903A6FC1457EFCA00360325 /* InfoPlist.strings in Resources */,
-				5903A70B1457EFCA00360325 /* MSMainViewController_iPhone.xib in Resources */,
-				5903A70E1457EFCA00360325 /* MSMainViewController_iPad.xib in Resources */,
-				5903A7111457EFCA00360325 /* MSFlipsideViewController.xib in Resources */,
+				59E684E61457F0CC0027F64C /* MainWindow.xib in Resources */,
+				59E684E91457F0D80027F64C /* MainView.xib in Resources */,
+				59E684EB1457F0DC0027F64C /* FlipsideView.xib in Resources */,
+				59E684EE1457F0E90027F64C /* README.md in Resources */,
+				59E684F61457F2E30027F64C /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,30 +200,6 @@
 				5903A6FB1457EFCA00360325 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		5903A7091457EFCA00360325 /* MSMainViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5903A70A1457EFCA00360325 /* en */,
-			);
-			name = MSMainViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		5903A70C1457EFCA00360325 /* MSMainViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5903A70D1457EFCA00360325 /* en */,
-			);
-			name = MSMainViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
-		5903A70F1457EFCA00360325 /* MSFlipsideViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5903A7101457EFCA00360325 /* en */,
-			);
-			name = MSFlipsideViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -271,6 +257,7 @@
 				GCC_PREFIX_HEADER = "MaxSMS/MaxSMS-Prefix.pch";
 				INFOPLIST_FILE = "MaxSMS/MaxSMS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -282,6 +269,7 @@
 				GCC_PREFIX_HEADER = "MaxSMS/MaxSMS-Prefix.pch";
 				INFOPLIST_FILE = "MaxSMS/MaxSMS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -305,6 +293,7 @@
 				5903A7161457EFCA00360325 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

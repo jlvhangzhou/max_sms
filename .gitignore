@@ -1,0 +1,4 @@
+*.DS_Store
+MaxSMS.xcodeproj/project.xcworkspace/
+MaxSMS.xcodeproj/xcuserdata/
+build/

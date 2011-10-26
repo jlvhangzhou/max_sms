@@ -1,23 +1,46 @@
 //
-//  MSFlipsideViewController.h
+//  FlipsideViewController.h
 //  MaxSMS
 //
-//  Created by Maxwell Swadling on 26/10/11.
-//  Copyright (c) 2011 Student. All rights reserved.
+//  Created by Maxwell Swadling on 28/11/10.
+//  Copyright 2010 Maxwell Swadling. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class MSFlipsideViewController;
+@protocol FlipsideViewControllerDelegate;
 
-@protocol MSFlipsideViewControllerDelegate
-- (void)flipsideViewControllerDidFinish:(MSFlipsideViewController *)controller;
-@end
 
-@interface MSFlipsideViewController : UIViewController
+@interface FlipsideViewController : UIViewController {
+	id <FlipsideViewControllerDelegate> delegate;
+	
+	UITextField *usernameBox;
+	UITextField *passwordBox;
+	UISwitch *messageSwitch;
+	
+	NSString *username;
+	NSString *password;
+	BOOL oneMessage;
+}
 
-@property (assign, nonatomic) IBOutlet id <MSFlipsideViewControllerDelegate> delegate;
+@property (nonatomic, retain) NSString *username;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic) BOOL oneMessage;
+@property (nonatomic, retain) NSString *sentFrom;
+
+@property (nonatomic, retain) IBOutlet UITextField *usernameBox;
+@property (nonatomic, retain) IBOutlet UITextField *passwordBox;
+@property (nonatomic, retain) IBOutlet UISwitch *messageSwitch;
+@property (retain, nonatomic) IBOutlet UITextField *sentText;
+
+@property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 
 - (IBAction)done:(id)sender;
 
 @end
+
+
+@protocol FlipsideViewControllerDelegate
+- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
+@end
+

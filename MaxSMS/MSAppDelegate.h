@@ -1,19 +1,22 @@
 //
-//  MSAppDelegate.h
+//  MaxSMSAppDelegate.h
 //  MaxSMS
 //
-//  Created by Maxwell Swadling on 26/10/11.
-//  Copyright (c) 2011 Student. All rights reserved.
+//  Created by Maxwell Swadling on 28/11/10.
+//  Copyright 2010 Maxwell Swadling. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class MSMainViewController;
+@class MainViewController;
 
-@interface MSAppDelegate : UIResponder <UIApplicationDelegate>
+@interface MSAppDelegate : NSObject <UIApplicationDelegate> {
+    UIWindow *window;
+    MainViewController *mainViewController;
+}
 
-@property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) MSMainViewController *mainViewController;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet MainViewController *mainViewController;
 
 @end
+

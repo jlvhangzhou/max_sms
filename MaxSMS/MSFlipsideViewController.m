@@ -1,82 +1,95 @@
 //
-//  MSFlipsideViewController.m
+//  FlipsideViewController.m
 //  MaxSMS
 //
-//  Created by Maxwell Swadling on 26/10/11.
-//  Copyright (c) 2011 Student. All rights reserved.
+//  Created by Maxwell Swadling on 28/11/10.
+//  Copyright 2010 Maxwell Swadling. All rights reserved.
 //
 
 #import "MSFlipsideViewController.h"
 
-@implementation MSFlipsideViewController
 
-@synthesize delegate = _delegate;
+@implementation FlipsideViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.contentSizeForViewInPopover = CGSizeMake(320.0, 480.0);
-    }
-    return self;
+@synthesize delegate;
+
+@synthesize username;
+@synthesize password;
+@synthesize sentFrom;
+@synthesize oneMessage;
+
+@synthesize usernameBox;
+@synthesize passwordBox;
+@synthesize messageSwitch;
+@synthesize sentText;
+
+- (void)updateSettings {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	[defaults setObject:[usernameBox text] forKey:@"username_preference"];
+	[defaults setObject:[passwordBox text] forKey:@"password_preference"];
+	[defaults setBool:[messageSwitch isOn] forKey:@"single_sms_preference"];
+    [defaults setObject:[sentText text] forKey:@"sent_preference"];
+    
+	[defaults synchronize]; // this method is optional
+	
 }
-							
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+	// Load prefs
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+	username = [defaults stringForKey:@"username_preference"];
+	password = [defaults stringForKey:@"password_preference"];
+	oneMessage = [defaults boolForKey:@"single_sms_preference"];
+	sentFrom = [defaults stringForKey:@"sent_preference"];
+    
+	[usernameBox setText:username];
+	[passwordBox setText:password];
+	[messageSwitch setOn:oneMessage];
+    [sentText setText:sentFrom];
+    
+    self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
+- (IBAction)done:(id)sender {
+	[self updateSettings];
+	
+	[self.delegate flipsideViewControllerDidFinish:self];	
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+
+- (void)didReceiveMemoryWarning {
+	// Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+	
+	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
+
+- (void)viewDidUnload {
+    [self setSentText:nil];
+	// Release any retained subviews of the main view.
+	// e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
+
+/*
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
+
+
+- (void)dealloc {
+    [sentText release];
+    [super dealloc];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
-}
-
-#pragma mark - Actions
-
-- (IBAction)done:(id)sender
-{
-    [self.delegate flipsideViewControllerDidFinish:self];
-}
 
 @end
