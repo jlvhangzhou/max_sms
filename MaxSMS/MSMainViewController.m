@@ -8,7 +8,6 @@
 
 #import "MSMainViewController.h"
 
-
 @implementation MainViewController
 
 @synthesize sendButton;
@@ -191,6 +190,60 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
+
+#pragma mark Address Book
+
+- (IBAction)lookupContact:(id)sender {
+    ABPeoplePickerNavigationController *picker =
+    [[ABPeoplePickerNavigationController alloc] init];
+    picker.peoplePickerDelegate = self;
+    
+    [self presentModalViewController:picker animated:YES];
+    [picker release];
+}
+
+- (void)peoplePickerNavigationControllerDidCancel:
+(ABPeoplePickerNavigationController *)peoplePicker {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+- (BOOL)peoplePickerNavigationController:
+(ABPeoplePickerNavigationController *)peoplePicker
+      shouldContinueAfterSelectingPerson:(ABRecordRef)person {
+    
+    
+    // after getting what we want, we loop thru all the phone records till we get the mobile number.
+    
+    ABMultiValueRef multiPhones = ABRecordCopyValue(person, kABPersonPhoneProperty);
+    for(CFIndex i = 0; i < ABMultiValueGetCount(multiPhones); i++) {
+        
+        if(CFStringCompare(ABMultiValueCopyLabelAtIndex(multiPhones, i), kABPersonPhoneMobileLabel, 0) == kCFCompareEqualTo) {
+            CFStringRef phoneNumberRef = ABMultiValueCopyValueAtIndex(multiPhones, i);
+            CFRelease(multiPhones);
+            NSString *phoneNo = (NSString *) phoneNumberRef;
+            CFRelease(phoneNumberRef);
+            self.phoneNumber.text = [NSString stringWithFormat:@"%@", phoneNo];
+            [phoneNumber release];
+        }
+    }
+    
+    [self dismissModalViewControllerAnimated:YES];
+    
+    return NO;
+}
+
+
+- (BOOL)peoplePickerNavigationController:
+(ABPeoplePickerNavigationController *)peoplePicker
+      shouldContinueAfterSelectingPerson:(ABRecordRef)person
+                                property:(ABPropertyID)property
+                              identifier:(ABMultiValueIdentifier)identifier{
+    return NO;
+}
+
+
+#pragma mark LOL K
 
 - (IBAction)showInfo:(id)sender {    
 	

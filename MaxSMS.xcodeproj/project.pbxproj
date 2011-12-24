@@ -15,6 +15,10 @@
 		5903A7021457EFCA00360325 /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5903A7011457EFCA00360325 /* MSAppDelegate.m */; };
 		5903A7051457EFCA00360325 /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5903A7041457EFCA00360325 /* MSMainViewController.m */; };
 		5903A7081457EFCA00360325 /* MSFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5903A7071457EFCA00360325 /* MSFlipsideViewController.m */; };
+		59AFC61814A61C5400061A8D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AFC61614A61C5400061A8D /* AddressBook.framework */; };
+		59AFC61914A61C5400061A8D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AFC61714A61C5400061A8D /* AddressBookUI.framework */; };
+		59AFC61C14A62AD900061A8D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59AFC61B14A62AD900061A8D /* icon.png */; };
+		59AFC61E14A62ADD00061A8D /* icon@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 59AFC61D14A62ADD00061A8D /* icon@2.png */; };
 		59E684E61457F0CC0027F64C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E684E51457F0CC0027F64C /* MainWindow.xib */; };
 		59E684E91457F0D80027F64C /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E684E81457F0D80027F64C /* MainView.xib */; };
 		59E684EB1457F0DC0027F64C /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E684EA1457F0DC0027F64C /* FlipsideView.xib */; };
@@ -37,12 +41,16 @@
 		5903A7041457EFCA00360325 /* MSMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMainViewController.m; sourceTree = "<group>"; };
 		5903A7061457EFCA00360325 /* MSFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSFlipsideViewController.h; sourceTree = "<group>"; };
 		5903A7071457EFCA00360325 /* MSFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSFlipsideViewController.m; sourceTree = "<group>"; };
+		59AFC61614A61C5400061A8D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		59AFC61714A61C5400061A8D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		59AFC61B14A62AD900061A8D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		59AFC61D14A62ADD00061A8D /* icon@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2.png"; path = "../icon@2.png"; sourceTree = "<group>"; };
 		59E684E51457F0CC0027F64C /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		59E684E81457F0D80027F64C /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		59E684EA1457F0DC0027F64C /* FlipsideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
-		59E684EC1457F0E30027F64C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		59E684ED1457F0E90027F64C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		59E684F51457F2E30027F64C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		59E684EC1457F0E30027F64C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		59E684ED1457F0E90027F64C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		59E684F51457F2E30027F64C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59AFC61814A61C5400061A8D /* AddressBook.framework in Frameworks */,
+				59AFC61914A61C5400061A8D /* AddressBookUI.framework in Frameworks */,
 				5903A6F21457EFCA00360325 /* UIKit.framework in Frameworks */,
 				5903A6F41457EFCA00360325 /* Foundation.framework in Frameworks */,
 				5903A6F61457EFCA00360325 /* CoreGraphics.framework in Frameworks */,
@@ -62,9 +72,6 @@
 		5903A6E21457EFCA00360325 = {
 			isa = PBXGroup;
 			children = (
-				59E684F51457F2E30027F64C /* Settings.bundle */,
-				59E684EC1457F0E30027F64C /* LICENSE */,
-				59E684ED1457F0E90027F64C /* README.md */,
 				5903A6F71457EFCA00360325 /* MaxSMS */,
 				5903A6F01457EFCA00360325 /* Frameworks */,
 				5903A6EE1457EFCA00360325 /* Products */,
@@ -82,6 +89,8 @@
 		5903A6F01457EFCA00360325 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59AFC61614A61C5400061A8D /* AddressBook.framework */,
+				59AFC61714A61C5400061A8D /* AddressBookUI.framework */,
 				5903A6F11457EFCA00360325 /* UIKit.framework */,
 				5903A6F31457EFCA00360325 /* Foundation.framework */,
 				5903A6F51457EFCA00360325 /* CoreGraphics.framework */,
@@ -109,6 +118,11 @@
 		5903A6F81457EFCA00360325 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				59E684F51457F2E30027F64C /* Settings.bundle */,
+				59E684EC1457F0E30027F64C /* LICENSE */,
+				59E684ED1457F0E90027F64C /* README.md */,
+				59AFC61D14A62ADD00061A8D /* icon@2.png */,
+				59AFC61B14A62AD900061A8D /* icon.png */,
 				5903A6F91457EFCA00360325 /* MaxSMS-Info.plist */,
 				5903A6FA1457EFCA00360325 /* InfoPlist.strings */,
 				5903A6FD1457EFCA00360325 /* main.m */,
@@ -174,6 +188,8 @@
 				59E684EB1457F0DC0027F64C /* FlipsideView.xib in Resources */,
 				59E684EE1457F0E90027F64C /* README.md in Resources */,
 				59E684F61457F2E30027F64C /* Settings.bundle in Resources */,
+				59AFC61C14A62AD900061A8D /* icon.png in Resources */,
+				59AFC61E14A62ADD00061A8D /* icon@2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

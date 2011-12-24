@@ -8,7 +8,11 @@
 
 #import "MSFlipsideViewController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
+
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
+
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate> {
 	UIButton *sendButton;
 	UITextField *phoneNumber;
 	UITextView *messageBox;
@@ -22,8 +26,8 @@
 @property (nonatomic, retain) NSMutableData *receivedData;
 @property (nonatomic, retain) UIAlertView *alert;
 
+- (IBAction)lookupContact:(id)sender;
 - (IBAction)showInfo:(id)sender;
-
 - (IBAction)sendMessage:(id)sender;
 
 @end
