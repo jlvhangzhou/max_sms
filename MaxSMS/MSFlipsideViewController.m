@@ -36,6 +36,9 @@
 }
 
 - (void)viewDidLoad {
+    // Load background
+    self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"txture.png"]];
+    
     [super viewDidLoad];
 	
 	// Load prefs
@@ -50,8 +53,6 @@
 	[passwordBox setText:password];
 	[messageSwitch setOn:oneMessage];
     [sentText setText:sentFrom];
-    
-    self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
 }
 
 

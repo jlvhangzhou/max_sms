@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23E30C68157128C600C84A73 /* txture.png in Resources */ = {isa = PBXBuildFile; fileRef = 23E30C67157128C600C84A73 /* txture.png */; };
 		5903A6F21457EFCA00360325 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5903A6F11457EFCA00360325 /* UIKit.framework */; };
 		5903A6F41457EFCA00360325 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5903A6F31457EFCA00360325 /* Foundation.framework */; };
 		5903A6F61457EFCA00360325 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5903A6F51457EFCA00360325 /* CoreGraphics.framework */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23E30C67157128C600C84A73 /* txture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = txture.png; sourceTree = "<group>"; };
 		5903A6ED1457EFCA00360325 /* MaxSMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaxSMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5903A6F11457EFCA00360325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5903A6F31457EFCA00360325 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +110,7 @@
 				5903A7061457EFCA00360325 /* MSFlipsideViewController.h */,
 				5903A7071457EFCA00360325 /* MSFlipsideViewController.m */,
 				59E684E51457F0CC0027F64C /* MainWindow.xib */,
+				23E30C67157128C600C84A73 /* txture.png */,
 				59E684E81457F0D80027F64C /* MainView.xib */,
 				59E684EA1457F0DC0027F64C /* FlipsideView.xib */,
 				5903A6F81457EFCA00360325 /* Supporting Files */,
@@ -190,6 +193,7 @@
 				59E684F61457F2E30027F64C /* Settings.bundle in Resources */,
 				59AFC61C14A62AD900061A8D /* icon.png in Resources */,
 				59AFC61E14A62ADD00061A8D /* icon@2.png in Resources */,
+				23E30C68157128C600C84A73 /* txture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

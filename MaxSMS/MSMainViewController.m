@@ -16,12 +16,12 @@
 @synthesize receivedData;
 @synthesize alert;
 
-/*
+
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
+     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"txture.png"]];
  [super viewDidLoad];
  }
- */
 
 -(NSString *)encodeString:(NSString *)string {
 	NSString * encodedString = (NSString *)
@@ -251,6 +251,7 @@
 	controller.delegate = self;
 	
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:controller animated:YES];
 	
 	[controller release];
