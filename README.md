@@ -1,10 +1,10 @@
 # MaxSMS
 
-I made this last year. It's a hacked up interface to SMS Global.
+A simple app for interfacing with SMSGlobal. Has some address book support
 
 # Features
 
-- Many ;)
+- Send from anyone and any number ;)
 
 # License
 
