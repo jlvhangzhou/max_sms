@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236A575A1571CC9000EF7B09 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236A57591571CC9000EF7B09 /* Storyboard.storyboard */; };
+		236A57601571D1E700EF7B09 /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 236A575C1571D1E700EF7B09 /* 08-chat.png */; };
+		236A57611571D1E700EF7B09 /* 08-chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 236A575D1571D1E700EF7B09 /* 08-chat@2x.png */; };
+		236A57621571D1E700EF7B09 /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 236A575E1571D1E700EF7B09 /* 20-gear2.png */; };
+		236A57631571D1E700EF7B09 /* 20-gear2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 236A575F1571D1E700EF7B09 /* 20-gear2@2x.png */; };
 		23E30C68157128C600C84A73 /* txture.png in Resources */ = {isa = PBXBuildFile; fileRef = 23E30C67157128C600C84A73 /* txture.png */; };
 		5903A6F21457EFCA00360325 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5903A6F11457EFCA00360325 /* UIKit.framework */; };
 		5903A6F41457EFCA00360325 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5903A6F31457EFCA00360325 /* Foundation.framework */; };
@@ -20,14 +25,16 @@
 		59AFC61914A61C5400061A8D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AFC61714A61C5400061A8D /* AddressBookUI.framework */; };
 		59AFC61C14A62AD900061A8D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59AFC61B14A62AD900061A8D /* icon.png */; };
 		59AFC61E14A62ADD00061A8D /* icon@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 59AFC61D14A62ADD00061A8D /* icon@2.png */; };
-		59E684E61457F0CC0027F64C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E684E51457F0CC0027F64C /* MainWindow.xib */; };
-		59E684E91457F0D80027F64C /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E684E81457F0D80027F64C /* MainView.xib */; };
-		59E684EB1457F0DC0027F64C /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E684EA1457F0DC0027F64C /* FlipsideView.xib */; };
 		59E684EE1457F0E90027F64C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 59E684ED1457F0E90027F64C /* README.md */; };
 		59E684F61457F2E30027F64C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59E684F51457F2E30027F64C /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		236A57591571CC9000EF7B09 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		236A575C1571D1E700EF7B09 /* 08-chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-chat.png"; sourceTree = "<group>"; };
+		236A575D1571D1E700EF7B09 /* 08-chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-chat@2x.png"; sourceTree = "<group>"; };
+		236A575E1571D1E700EF7B09 /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
+		236A575F1571D1E700EF7B09 /* 20-gear2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2@2x.png"; sourceTree = "<group>"; };
 		23E30C67157128C600C84A73 /* txture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = txture.png; sourceTree = "<group>"; };
 		5903A6ED1457EFCA00360325 /* MaxSMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaxSMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5903A6F11457EFCA00360325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -47,9 +54,6 @@
 		59AFC61714A61C5400061A8D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		59AFC61B14A62AD900061A8D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		59AFC61D14A62ADD00061A8D /* icon@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2.png"; path = "../icon@2.png"; sourceTree = "<group>"; };
-		59E684E51457F0CC0027F64C /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		59E684E81457F0D80027F64C /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
-		59E684EA1457F0DC0027F64C /* FlipsideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
 		59E684EC1457F0E30027F64C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		59E684ED1457F0E90027F64C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		59E684F51457F2E30027F64C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
@@ -109,10 +113,12 @@
 				5903A7041457EFCA00360325 /* MSMainViewController.m */,
 				5903A7061457EFCA00360325 /* MSFlipsideViewController.h */,
 				5903A7071457EFCA00360325 /* MSFlipsideViewController.m */,
-				59E684E51457F0CC0027F64C /* MainWindow.xib */,
 				23E30C67157128C600C84A73 /* txture.png */,
-				59E684E81457F0D80027F64C /* MainView.xib */,
-				59E684EA1457F0DC0027F64C /* FlipsideView.xib */,
+				236A575C1571D1E700EF7B09 /* 08-chat.png */,
+				236A575D1571D1E700EF7B09 /* 08-chat@2x.png */,
+				236A575E1571D1E700EF7B09 /* 20-gear2.png */,
+				236A575F1571D1E700EF7B09 /* 20-gear2@2x.png */,
+				236A57591571CC9000EF7B09 /* Storyboard.storyboard */,
 				5903A6F81457EFCA00360325 /* Supporting Files */,
 			);
 			path = MaxSMS;
@@ -186,14 +192,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5903A6FC1457EFCA00360325 /* InfoPlist.strings in Resources */,
-				59E684E61457F0CC0027F64C /* MainWindow.xib in Resources */,
-				59E684E91457F0D80027F64C /* MainView.xib in Resources */,
-				59E684EB1457F0DC0027F64C /* FlipsideView.xib in Resources */,
 				59E684EE1457F0E90027F64C /* README.md in Resources */,
 				59E684F61457F2E30027F64C /* Settings.bundle in Resources */,
 				59AFC61C14A62AD900061A8D /* icon.png in Resources */,
 				59AFC61E14A62ADD00061A8D /* icon@2.png in Resources */,
 				23E30C68157128C600C84A73 /* txture.png in Resources */,
+				236A575A1571CC9000EF7B09 /* Storyboard.storyboard in Resources */,
+				236A57601571D1E700EF7B09 /* 08-chat.png in Resources */,
+				236A57611571D1E700EF7B09 /* 08-chat@2x.png in Resources */,
+				236A57621571D1E700EF7B09 /* 20-gear2.png in Resources */,
+				236A57631571D1E700EF7B09 /* 20-gear2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
