@@ -12,7 +12,7 @@
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate> {
+@interface MainViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate> {
 	UIButton *sendButton;
 	UITextField *phoneNumber;
 	UITextView *messageBox;
@@ -27,7 +27,6 @@
 @property (nonatomic, retain) UIAlertView *alert;
 
 - (IBAction)lookupContact:(id)sender;
-- (IBAction)showInfo:(id)sender;
 - (IBAction)sendMessage:(id)sender;
 
 @end

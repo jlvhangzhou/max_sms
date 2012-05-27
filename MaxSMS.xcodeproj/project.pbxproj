@@ -113,11 +113,6 @@
 				5903A7041457EFCA00360325 /* MSMainViewController.m */,
 				5903A7061457EFCA00360325 /* MSFlipsideViewController.h */,
 				5903A7071457EFCA00360325 /* MSFlipsideViewController.m */,
-				23E30C67157128C600C84A73 /* txture.png */,
-				236A575C1571D1E700EF7B09 /* 08-chat.png */,
-				236A575D1571D1E700EF7B09 /* 08-chat@2x.png */,
-				236A575E1571D1E700EF7B09 /* 20-gear2.png */,
-				236A575F1571D1E700EF7B09 /* 20-gear2@2x.png */,
 				236A57591571CC9000EF7B09 /* Storyboard.storyboard */,
 				5903A6F81457EFCA00360325 /* Supporting Files */,
 			);
@@ -127,17 +122,30 @@
 		5903A6F81457EFCA00360325 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				598654641571DC260073F0FD /* Images */,
 				59E684F51457F2E30027F64C /* Settings.bundle */,
 				59E684EC1457F0E30027F64C /* LICENSE */,
 				59E684ED1457F0E90027F64C /* README.md */,
-				59AFC61D14A62ADD00061A8D /* icon@2.png */,
-				59AFC61B14A62AD900061A8D /* icon.png */,
 				5903A6F91457EFCA00360325 /* MaxSMS-Info.plist */,
 				5903A6FA1457EFCA00360325 /* InfoPlist.strings */,
 				5903A6FD1457EFCA00360325 /* main.m */,
 				5903A6FF1457EFCA00360325 /* MaxSMS-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		598654641571DC260073F0FD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				59AFC61D14A62ADD00061A8D /* icon@2.png */,
+				59AFC61B14A62AD900061A8D /* icon.png */,
+				23E30C67157128C600C84A73 /* txture.png */,
+				236A575C1571D1E700EF7B09 /* 08-chat.png */,
+				236A575D1571D1E700EF7B09 /* 08-chat@2x.png */,
+				236A575E1571D1E700EF7B09 /* 20-gear2.png */,
+				236A575F1571D1E700EF7B09 /* 20-gear2@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

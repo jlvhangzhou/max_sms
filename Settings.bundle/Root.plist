@@ -68,6 +68,12 @@
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Background patterns from http://subtlepatterns.com/</string>
+		</dict>
 	</array>
 </dict>
 </plist>

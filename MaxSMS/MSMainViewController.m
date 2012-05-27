@@ -8,6 +8,8 @@
 
 #import "MSMainViewController.h"
 
+#import "MSAppDelegate.h"
+
 @implementation MainViewController
 
 @synthesize sendButton;
@@ -17,11 +19,54 @@
 @synthesize alert;
 
 
+#pragma mark LOL K
+
+
+- (void)didReceiveMemoryWarning {
+	// Releases the view if it doesn't have a superview.
+  [super didReceiveMemoryWarning];
+	
+	// Release any cached data, images, etc. that aren't in use.
+}
+
+
+- (void)viewDidUnload {
+	// Release any retained subviews of the main view.
+	// e.g. self.myOutlet = nil;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+  UITouch *touch = [[event allTouches] anyObject];
+  RESIGN_(messageBox);
+	RESIGN_(phoneNumber);
+	
+	[super touchesBegan:touches withEvent:event];
+  
+}
+
+
+/*
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations.
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
+
+
+- (void)dealloc {
+  [super dealloc];
+}
+
+
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
      self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"txture.png"]];
  [super viewDidLoad];
  }
+
+#pragma mark Send Message
 
 -(NSString *)encodeString:(NSString *)string {
 	NSString * encodedString = (NSString *)
@@ -240,63 +285,6 @@
                                 property:(ABPropertyID)property
                               identifier:(ABMultiValueIdentifier)identifier{
     return NO;
-}
-
-
-#pragma mark LOL K
-
-- (IBAction)showInfo:(id)sender {    
-	
-	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
-	controller.delegate = self;
-	
-	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	[self presentModalViewController:controller animated:YES];
-	
-	[controller release];
-}
-
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc. that aren't in use.
-}
-
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	
-    UITouch *touch = [[event allTouches] anyObject];
-    if ([messageBox isFirstResponder] && [touch view] != messageBox) {
-        [messageBox resignFirstResponder];
-    }
-	if ([phoneNumber isFirstResponder] && [touch view] != phoneNumber) {
-		[phoneNumber resignFirstResponder];
-	}
-	
-	[super touchesBegan:touches withEvent:event];
-    
-}
-
-
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations.
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
-
-
-- (void)dealloc {
-    [super dealloc];
 }
 
 

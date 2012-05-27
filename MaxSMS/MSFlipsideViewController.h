@@ -8,11 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol FlipsideViewControllerDelegate;
-
-
-@interface FlipsideViewController : UIViewController {
-	id <FlipsideViewControllerDelegate> delegate;
+@interface FlipsideViewController : UIViewController <UITextFieldDelegate> {
 	
 	UITextField *usernameBox;
 	UITextField *passwordBox;
@@ -33,14 +29,5 @@
 @property (nonatomic, retain) IBOutlet UISwitch *messageSwitch;
 @property (retain, nonatomic) IBOutlet UITextField *sentText;
 
-@property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
-
-- (IBAction)done:(id)sender;
-
-@end
-
-
-@protocol FlipsideViewControllerDelegate
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
 @end
 

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define RESIGN_(e) if ([e isFirstResponder] && [touch view] != e)\
+  { [e resignFirstResponder]; }
+
 @class MainViewController;
 
 @interface MSAppDelegate : NSObject <UIApplicationDelegate> {

@@ -8,10 +8,10 @@
 
 #import "MSFlipsideViewController.h"
 
+#import "MSAppDelegate.h"
+
 
 @implementation FlipsideViewController
-
-@synthesize delegate;
 
 @synthesize username;
 @synthesize password;
@@ -23,16 +23,26 @@
 @synthesize messageSwitch;
 @synthesize sentText;
 
-- (void)updateSettings {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	
-	[defaults setObject:[usernameBox text] forKey:@"username_preference"];
-	[defaults setObject:[passwordBox text] forKey:@"password_preference"];
-	[defaults setBool:[messageSwitch isOn] forKey:@"single_sms_preference"];
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  
+  if (textField == usernameBox) {
+    [defaults setObject:[usernameBox text] forKey:@"username_preference"];
+  } else if (textField == passwordBox) {
+    [defaults setObject:[passwordBox text] forKey:@"password_preference"];
+  } else if (textField == sentText) {
     [defaults setObject:[sentText text] forKey:@"sent_preference"];
-    
-	[defaults synchronize]; // this method is optional
-	
+  }
+  
+	[defaults synchronize];
+  
+}
+
+// toggle truncate messages
+- (void)toggle_message {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setBool:[messageSwitch isOn] forKey:@"single_sms_preference"];
+  [defaults synchronize];
 }
 
 - (void)viewDidLoad {
@@ -52,14 +62,15 @@
 	[usernameBox setText:username];
 	[passwordBox setText:password];
 	[messageSwitch setOn:oneMessage];
-    [sentText setText:sentFrom];
-}
-
-
-- (IBAction)done:(id)sender {
-	[self updateSettings];
-	
-	[self.delegate flipsideViewControllerDidFinish:self];	
+  [sentText setText:sentFrom];
+  
+  // Make this the delegate for the editors
+  usernameBox.delegate = self;
+  passwordBox.delegate = self;
+  sentText.delegate = self;
+  
+  // on toggle, call toggle_message
+  [messageSwitch addTarget:self action:@selector(toggle_message) forControlEvents:UIControlEventValueChanged];
 }
 
 
@@ -75,6 +86,18 @@
     [self setSentText:nil];
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+  UITouch *touch = [[event allTouches] anyObject];
+  RESIGN_(usernameBox);
+	RESIGN_(passwordBox);
+  RESIGN_(sentText);
+	
+	[super touchesBegan:touches withEvent:event];
+  
 }
 
 
