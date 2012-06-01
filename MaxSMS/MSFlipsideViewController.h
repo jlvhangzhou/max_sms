@@ -19,15 +19,15 @@
 	BOOL oneMessage;
 }
 
-@property (nonatomic, retain) NSString *username;
-@property (nonatomic, retain) NSString *password;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *password;
 @property (nonatomic) BOOL oneMessage;
-@property (nonatomic, retain) NSString *sentFrom;
+@property (nonatomic, strong) NSString *sentFrom;
 
-@property (nonatomic, retain) IBOutlet UITextField *usernameBox;
-@property (nonatomic, retain) IBOutlet UITextField *passwordBox;
-@property (nonatomic, retain) IBOutlet UISwitch *messageSwitch;
-@property (retain, nonatomic) IBOutlet UITextField *sentText;
+@property (nonatomic, strong) IBOutlet UITextField *usernameBox;
+@property (nonatomic, strong) IBOutlet UITextField *passwordBox;
+@property (nonatomic, strong) IBOutlet UISwitch *messageSwitch;
+@property (strong, nonatomic) IBOutlet UITextField *sentText;
 
 @end
 

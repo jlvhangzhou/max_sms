@@ -12,9 +12,10 @@
 
 @implementation MainViewController
 
-@synthesize sendButton;
-@synthesize phoneNumber;
-@synthesize messageBox;
+@synthesize sendButton = _sendButton;
+@synthesize phoneNumber = _phoneNumber;
+@synthesize sentFrom = _sentFrom;
+@synthesize messageBox = _messageBox;
 @synthesize receivedData;
 @synthesize alert;
 
@@ -31,15 +32,17 @@
 
 
 - (void)viewDidUnload {
+    [self setSentFrom:nil];
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	
-  UITouch *touch = [[event allTouches] anyObject];
-  RESIGN_(messageBox);
-	RESIGN_(phoneNumber);
+    UITouch *touch = [[event allTouches] anyObject];
+    RESIGN_(_messageBox);
+	RESIGN_(_phoneNumber);
+    RESIGN_(_sentFrom);
 	
 	[super touchesBegan:touches withEvent:event];
   
@@ -55,24 +58,25 @@
  */
 
 
-- (void)dealloc {
-  [super dealloc];
-}
-
-
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
      self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"txture.png"]];
-   UIImage* buttonImage =[[UIImage imageNamed:@"button.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
-   [sendButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
- [super viewDidLoad];
+     UIImage* buttonImage =[[UIImage imageNamed:@"button.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+     [_sendButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+     
+     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+     _sentFrom.text = [defaults stringForKey:@"sent_preference"];
+     
+     [(MSAppDelegate *)[UIApplication sharedApplication].delegate setSentFromText:_sentFrom];
+     
+     [super viewDidLoad];
  }
 
 #pragma mark Send Message
 
 -(NSString *)encodeString:(NSString *)string {
-	NSString * encodedString = (NSString *)
-    CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)string, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8 );
+	NSString * encodedString = (__bridge NSString *)
+    CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)string, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8 );
 	return encodedString;
 }
 
@@ -84,7 +88,6 @@
 
 -(void)alertError {
 	[alert dismissWithClickedButtonIndex:0 animated:YES];
-	[alert release];
 	alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Check username / password" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 	[alert show];
 }
@@ -94,23 +97,28 @@
 	NSString *content = [[NSString alloc]  initWithBytes:[receivedData bytes] length:[receivedData length] encoding: NSUTF8StringEncoding];
 	if ([content rangeOfString:@"ERROR"].location == NSNotFound) {
 		[alert dismissWithClickedButtonIndex:0 animated:YES];
-		[alert release];
 		alert = [[UIAlertView alloc] initWithTitle:@"Sent" message:@"Message sent" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 		[alert show];
 		
-		[phoneNumber setText:@""];
-		[messageBox setText:@""];
+		[_phoneNumber setText:@""];
+		[_messageBox setText:@""];
 	} else {
 		[self alertError];
 	}
 	
-	[alert release];
-	
-    // release the connection, and the data object
-    [connection release];
-    [receivedData release];
 	
 }
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
+{
+	if ( [ text isEqualToString: @"\n" ] ) {
+		[ textView resignFirstResponder ];
+        [self sendMessage:nil];
+		return NO;
+	}
+	return YES;
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     // This method is called when the server has determined that it
@@ -128,17 +136,21 @@
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     [receivedData appendData:data];
-} 
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    ((MSAppDelegate *)[UIApplication sharedApplication].delegate).sentFromText2.text = textField.text;
+    [defaults setValue:_sentFrom.text forKey:@"sent_preference"];
+    [defaults synchronize];
+}
+
 
 - (void)connection:(NSURLConnection *)connection
   didFailWithError:(NSError *)error
 {
 	[self alertError];
-	[alert release];
-    // release the connection, and the data object
-    [connection release];
-    // receivedData is declared as a method instance elsewhere
-    [receivedData release];
 	
     // inform the user
     NSLog(@"Connection failed! Error");
@@ -146,9 +158,10 @@
 
 
 - (IBAction)sendMessage:(id)sender {
-	[sendButton setEnabled:NO];
-	[phoneNumber setEnabled:NO];
-	[messageBox setEditable:NO];
+	[_sendButton setEnabled:NO];
+	[_phoneNumber setEnabled:NO];
+	[_messageBox setEditable:NO];
+    [_sentFrom setEnabled:NO];
     
 	// verify inputs are valid
 	BOOL valid = YES;
@@ -157,12 +170,11 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *username = [defaults stringForKey:@"username_preference"];
 	NSString *password = [defaults stringForKey:@"password_preference"];
-    
-	NSString *from = [defaults stringForKey:@"sent_preference"];
+	NSString *from = _sentFrom.text;
 	NSString *url = @"http://www.smsglobal.com/http-api.php";
 	
 	// number to send to
-	NSString *to = [phoneNumber text];
+	NSString *to = [_phoneNumber text];
 	
 	// Validates phone number
 	NSMutableString *strippedString = [NSMutableString stringWithCapacity:to.length];
@@ -178,10 +190,10 @@
 	
 	// message string
 	NSString *text;
-	if ([defaults boolForKey:@"single_sms_preference"] && ([[messageBox text] length] > 159)) {
-		text = [[messageBox text] substringToIndex:159];
+	if ([defaults boolForKey:@"single_sms_preference"] && ([[_messageBox text] length] > 159)) {
+		text = [[_messageBox text] substringToIndex:159];
 	} else {
-		text = [messageBox text];
+		text = [_messageBox text];
 	}
 	if ([text length] == 0) {
 		valid = NO;
@@ -213,23 +225,22 @@
 		if (theConnection) {
 			// Create the NSMutableData to hold the received data.
 			// receivedData is an instance variable declared elsewhere.
-			receivedData = [[NSMutableData data] retain];
+			receivedData = [NSMutableData data];
 			alert = [[UIAlertView alloc] initWithTitle:@"Sending" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
 		} else {
 			alert = [[UIAlertView alloc] initWithTitle:@"Failed" message:@"Not enough internet." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-			[alert autorelease];
 		}
 	} else {
 		alert = [[UIAlertView alloc] initWithTitle:@"Failed" message:@"Phone number invalid or message was empty." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-		[alert autorelease];
 	}
     
 	
 	[alert show];
     
-	[sendButton setEnabled:YES];
-	[phoneNumber setEnabled:YES];
-	[messageBox setEditable:YES];
+	[_sendButton setEnabled:YES];
+	[_phoneNumber setEnabled:YES];
+	[_messageBox setEditable:YES];
+    [_sentFrom setEnabled:YES];
 }
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
@@ -246,7 +257,6 @@
     picker.peoplePickerDelegate = self;
     
     [self presentModalViewController:picker animated:YES];
-    [picker release];
 }
 
 - (void)peoplePickerNavigationControllerDidCancel:
@@ -268,10 +278,9 @@
         if(CFStringCompare(ABMultiValueCopyLabelAtIndex(multiPhones, i), kABPersonPhoneMobileLabel, 0) == kCFCompareEqualTo) {
             CFStringRef phoneNumberRef = ABMultiValueCopyValueAtIndex(multiPhones, i);
             CFRelease(multiPhones);
-            NSString *phoneNo = (NSString *) phoneNumberRef;
+            NSString *phoneNo = (__bridge NSString *) phoneNumberRef;
             CFRelease(phoneNumberRef);
             self.phoneNumber.text = [NSString stringWithFormat:@"%@", phoneNo];
-            [phoneNumber release];
         }
     }
     

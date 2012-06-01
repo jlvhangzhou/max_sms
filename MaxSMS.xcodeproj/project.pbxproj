@@ -297,6 +297,8 @@
 		5903A7151457EFCA00360325 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MaxSMS/MaxSMS-Prefix.pch";
 				INFOPLIST_FILE = "MaxSMS/MaxSMS-Info.plist";
@@ -309,6 +311,8 @@
 		5903A7161457EFCA00360325 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MaxSMS/MaxSMS-Prefix.pch";
 				INFOPLIST_FILE = "MaxSMS/MaxSMS-Info.plist";

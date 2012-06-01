@@ -14,7 +14,8 @@
 
 @synthesize window;
 @synthesize mainViewController;
-
+@synthesize sentFromText = _sentFromText;
+@synthesize sentFromText2 = _sentFromText2;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -89,11 +90,5 @@
      */
 }
 
-
-- (void)dealloc {
-    [mainViewController release];
-    [window release];
-    [super dealloc];
-}
 
 @end

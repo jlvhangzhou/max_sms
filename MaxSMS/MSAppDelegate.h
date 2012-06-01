@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define AppDelegate ((MSAppDelegate *)[UIApplication sharedApplication].delegate)
+
 #define RESIGN_(e) if ([e isFirstResponder] && [touch view] != e)\
   { [e resignFirstResponder]; }
 
@@ -16,8 +18,12 @@
     UITabBarController *mainViewController;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *mainViewController;
+// NEVER EVER DO ANYTHING LIKE THIS EVER
+@property (nonatomic, weak) UITextField *sentFromText;
+@property (nonatomic, weak) UITextField *sentFromText2;
+
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UITabBarController *mainViewController;
 
 @end
 

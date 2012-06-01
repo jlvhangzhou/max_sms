@@ -87,20 +87,23 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Sxk-9l-90t">
-                                <rect key="frame" x="20" y="115" width="280" height="73"/>
+                                <rect key="frame" x="20" y="154" width="280" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wJ8-be-Gza" id="m4v-jK-LTe"/>
+                                </connections>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="61 40 000000" minimumFontSize="17" id="EOa-hl-ZXT">
-                                <rect key="frame" x="56" y="52" width="213" height="31"/>
+                                <rect key="frame" x="73" y="52" width="196" height="31"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RW1-Mq-0iA">
-                                <rect key="frame" x="20" y="196" width="280" height="40"/>
+                                <rect key="frame" x="20" y="244" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="Send Text">
@@ -122,7 +125,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Message" lineBreakMode="tailTruncation" minimumFontSize="10" id="xce-tW-uer">
-                                <rect key="frame" x="20" y="86" width="69" height="21"/>
+                                <rect key="frame" x="20" y="125" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,6 +153,22 @@
                                     <navigationItem title="SMS Send" id="Ehi-s7-7lU"/>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="dUe-52-eEB">
+                                <rect key="frame" x="73" y="92" width="196" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wJ8-be-Gza" id="RbL-qq-3Ic"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From:" lineBreakMode="tailTruncation" minimumFontSize="10" id="cfP-dT-9v3">
+                                <rect key="frame" x="20" y="96" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
@@ -158,6 +177,7 @@
                         <outlet property="messageBox" destination="Sxk-9l-90t" id="j2t-At-MQ5"/>
                         <outlet property="phoneNumber" destination="EOa-hl-ZXT" id="afW-oH-PMd"/>
                         <outlet property="sendButton" destination="RW1-Mq-0iA" id="QHB-0B-yCL"/>
+                        <outlet property="sentFrom" destination="dUe-52-eEB" id="jkK-B0-rbP"/>
                     </connections>
                 </viewController>
             </objects>
@@ -207,6 +227,7 @@
                 <relationship kind="outlet" name="messageBox" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="phoneNumber" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="sendButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sentFrom" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>

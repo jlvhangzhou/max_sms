@@ -27,14 +27,15 @@
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   
   if (textField == usernameBox) {
-    [defaults setObject:[usernameBox text] forKey:@"username_preference"];
+      [defaults setObject:[usernameBox text] forKey:@"username_preference"];
   } else if (textField == passwordBox) {
-    [defaults setObject:[passwordBox text] forKey:@"password_preference"];
+      [defaults setObject:[passwordBox text] forKey:@"password_preference"];
   } else if (textField == sentText) {
-    [defaults setObject:[sentText text] forKey:@"sent_preference"];
+      [defaults setObject:[sentText text] forKey:@"sent_preference"];
+      AppDelegate.sentFromText.text = [sentText text];
   }
   
-	[defaults synchronize];
+  [defaults synchronize];
   
 }
 
@@ -62,15 +63,17 @@
 	[usernameBox setText:username];
 	[passwordBox setText:password];
 	[messageSwitch setOn:oneMessage];
-  [sentText setText:sentFrom];
-  
-  // Make this the delegate for the editors
-  usernameBox.delegate = self;
-  passwordBox.delegate = self;
-  sentText.delegate = self;
-  
-  // on toggle, call toggle_message
-  [messageSwitch addTarget:self action:@selector(toggle_message) forControlEvents:UIControlEventValueChanged];
+    [sentText setText:sentFrom];
+
+    // Make this the delegate for the editors
+    usernameBox.delegate = self;
+    passwordBox.delegate = self;
+    sentText.delegate = self;
+    
+    AppDelegate.sentFromText2 = sentText;
+
+    // on toggle, call toggle_message
+    [messageSwitch addTarget:self action:@selector(toggle_message) forControlEvents:UIControlEventValueChanged];
 }
 
 
@@ -91,10 +94,10 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	
-  UITouch *touch = [[event allTouches] anyObject];
-  RESIGN_(usernameBox);
+    UITouch *touch = [[event allTouches] anyObject];
+    RESIGN_(usernameBox);
 	RESIGN_(passwordBox);
-  RESIGN_(sentText);
+    RESIGN_(sentText);
 	
 	[super touchesBegan:touches withEvent:event];
   
@@ -109,11 +112,6 @@
  }
  */
 
-
-- (void)dealloc {
-    [sentText release];
-    [super dealloc];
-}
 
 
 @end
