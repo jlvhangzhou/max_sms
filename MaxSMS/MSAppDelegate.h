@@ -11,15 +11,13 @@
 #define RESIGN_(e) if ([e isFirstResponder] && [touch view] != e)\
   { [e resignFirstResponder]; }
 
-@class MainViewController;
-
 @interface MSAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    MainViewController *mainViewController;
+    UITabBarController *mainViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet MainViewController *mainViewController;
+@property (nonatomic, retain) IBOutlet UITabBarController *mainViewController;
 
 @end
 

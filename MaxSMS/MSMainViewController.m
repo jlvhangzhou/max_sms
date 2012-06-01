@@ -63,6 +63,8 @@
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
      self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"txture.png"]];
+   UIImage* buttonImage =[[UIImage imageNamed:@"button.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+   [sendButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
  [super viewDidLoad];
  }
 

@@ -24,8 +24,19 @@
     // Override point for customization after application launch.  
     
     // Add the main view controller's view to the window and display.
-    [self.window addSubview:mainViewController.view];
-    [self.window makeKeyAndVisible];
+    mainViewController = (UITabBarController *) self.window.rootViewController;
+  
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent
+                                              animated:YES];
+    
+    UIImage* buttonImage =[[UIImage imageNamed:@"button.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+    
+    [[UINavigationBar appearance] setBackgroundImage:buttonImage forBarMetrics:UIBarMetricsDefault];
+    
+    UITabBarController *tabbar = (UITabBarController *) mainViewController;
+    
+    [[tabbar tabBar] setBackgroundImage:buttonImage];
+    [[tabbar tabBar] setTintColor:[UIColor whiteColor]];
     
     return YES;
 }

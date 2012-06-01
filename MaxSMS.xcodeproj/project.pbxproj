@@ -21,6 +21,7 @@
 		5903A7021457EFCA00360325 /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5903A7011457EFCA00360325 /* MSAppDelegate.m */; };
 		5903A7051457EFCA00360325 /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5903A7041457EFCA00360325 /* MSMainViewController.m */; };
 		5903A7081457EFCA00360325 /* MSFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5903A7071457EFCA00360325 /* MSFlipsideViewController.m */; };
+		59767CBF1577E1A900C8A595 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 59767CBE1577E1A900C8A595 /* button.png */; };
 		59AFC61814A61C5400061A8D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AFC61614A61C5400061A8D /* AddressBook.framework */; };
 		59AFC61914A61C5400061A8D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AFC61714A61C5400061A8D /* AddressBookUI.framework */; };
 		59AFC61C14A62AD900061A8D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59AFC61B14A62AD900061A8D /* icon.png */; };
@@ -51,6 +52,7 @@
 		5903A7041457EFCA00360325 /* MSMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMainViewController.m; sourceTree = "<group>"; };
 		5903A7061457EFCA00360325 /* MSFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSFlipsideViewController.h; sourceTree = "<group>"; };
 		5903A7071457EFCA00360325 /* MSFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSFlipsideViewController.m; sourceTree = "<group>"; };
+		59767CBE1577E1A900C8A595 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		59AFC61614A61C5400061A8D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		59AFC61714A61C5400061A8D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		59AFC61B14A62AD900061A8D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		5903A6F71457EFCA00360325 /* MaxSMS */ = {
 			isa = PBXGroup;
 			children = (
+				59767CBE1577E1A900C8A595 /* button.png */,
 				5903A7001457EFCA00360325 /* MSAppDelegate.h */,
 				5903A7011457EFCA00360325 /* MSAppDelegate.m */,
 				5903A7031457EFCA00360325 /* MSMainViewController.h */,
@@ -214,6 +217,7 @@
 				236A57621571D1E700EF7B09 /* 20-gear2.png in Resources */,
 				236A57631571D1E700EF7B09 /* 20-gear2@2x.png in Resources */,
 				59C835C91571E0A100BDB7B7 /* txture@2x.png in Resources */,
+				59767CBF1577E1A900C8A595 /* button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
