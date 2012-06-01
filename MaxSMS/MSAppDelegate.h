@@ -18,6 +18,8 @@
     UITabBarController *mainViewController;
 }
 
+// The correct way is to use viewWillAppear:
+//     this will be fired when the view is selected in the tab bar
 // NEVER EVER DO ANYTHING LIKE THIS EVER
 @property (nonatomic, weak) UITextField *sentFromText;
 @property (nonatomic, weak) UITextField *sentFromText2;
