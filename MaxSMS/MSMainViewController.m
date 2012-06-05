@@ -109,6 +109,21 @@
 	
 }
 
+#pragma mark - text field delegates
+
+// Stop the from field from been over 11 long
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    // only for from field
+    if (textField == _sentFrom) {
+        if ([textField.text length] > 11) {
+            textField.text = [textField.text substringToIndex:11-1];
+            return NO;
+        }
+    }
+    return YES;
+}
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
 {
 	if ( [ text isEqualToString: @"\n" ] ) {
@@ -118,6 +133,8 @@
 	}
 	return YES;
 }
+
+#pragma mark - connection delegates
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {

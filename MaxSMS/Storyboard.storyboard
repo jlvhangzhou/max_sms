@@ -159,7 +159,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="wJ8-be-Gza" id="RbL-qq-3Ic"/>
+                                    <outlet property="delegate" destination="wJ8-be-Gza" id="KUQ-1b-vVx"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From:" lineBreakMode="tailTruncation" minimumFontSize="10" id="cfP-dT-9v3">
