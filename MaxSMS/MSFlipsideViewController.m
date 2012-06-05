@@ -19,6 +19,7 @@
 @synthesize username;
 @synthesize password;
 @synthesize sentFrom;
+@synthesize loadingSpinner;
 @synthesize oneMessage;
 
 @synthesize usernameBox;
@@ -55,7 +56,7 @@
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"txture.png"]];
     
     [super viewDidLoad];
-	
+    
 	// Load prefs
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -80,32 +81,7 @@
     // on toggle, call toggle_message
     [messageSwitch addTarget:self action:@selector(toggle_message) forControlEvents:UIControlEventValueChanged];
     
-    // Send a request for current usage    
-    // username, password, country = AU
-    // returns CREDITS:8658.44;COUNTRY:AU;SMS:3764.54;
-    // or returns some error stuff...
-    
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                          username, @"user",
-                          password, @"password",
-                          @"AU", @"country",
-                          nil];
-    
-    AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://www.smsglobal.com/"]];
-    NSMutableURLRequest *request = [client requestWithMethod:@"GET" path:@"credit-api.php" parameters:params];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        // Object 1 at index is the country, not useful.
-        NSArray *vals = [[operation responseString] componentsSeparatedByString:@";"];
-        
-        creditRemaining.text = [NSString stringWithFormat:@"%@ / %@", [vals objectAtIndex:0], [vals objectAtIndex:2]];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error: %@", [operation error]);
-    }];
-    
-    [operation start];
+    [self refreshCredit:nil];
 }
 
 
@@ -118,6 +94,7 @@
 
 
 - (void)viewDidUnload {
+    [self setLoadingSpinner:nil];
     [self setCreditRemaining:nil];
     [self setSentText:nil];
 	// Release any retained subviews of the main view.
@@ -147,4 +124,43 @@
 
 
 
+- (IBAction)refreshCredit:(id)sender {
+    // Send a request for current usage    
+    // username, password, country = AU
+    // returns CREDITS:8658.44;COUNTRY:AU;SMS:3764.54;
+    // or returns some error stuff...
+    [loadingSpinner startAnimating];
+    [creditRemaining setHidden:YES];
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            usernameBox.text, @"user",
+                            passwordBox.text, @"password",
+                            @"AU", @"country",
+                            nil];
+    
+    AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://www.smsglobal.com/"]];
+    NSMutableURLRequest *request = [client requestWithMethod:@"GET" path:@"credit-api.php" parameters:params];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // Object 1 at index is the country, not useful.
+        NSArray *vals = [[operation responseString] componentsSeparatedByString:@";"];
+        if ([vals count] >= 3) {
+            creditRemaining.text = [NSString stringWithFormat:@"%@ / %@", [vals objectAtIndex:0], [vals objectAtIndex:2]];
+        } else {
+            creditRemaining.text = [operation responseString];
+        }
+        [loadingSpinner stopAnimating];
+        [creditRemaining setHidden:NO];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", [operation error]);
+        creditRemaining.text = [[operation error] description];
+        [loadingSpinner stopAnimating];
+        [creditRemaining setHidden:NO];
+    }];
+    
+    [operation start];
+}
 @end

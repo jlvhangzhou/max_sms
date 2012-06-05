@@ -35,13 +35,13 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="nRQ-2S-VD7">
-                                <rect key="frame" x="121" y="198" width="79" height="27"/>
+                                <rect key="frame" x="221" y="176" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Concatenate long message to 1 SMS" lineBreakMode="tailTruncation" minimumFontSize="10" id="gtU-Bd-MU6">
-                                <rect key="frame" x="20" y="169" width="280" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Concatenate long message to 1 SMS" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="gtU-Bd-MU6">
+                                <rect key="frame" x="20" y="171" width="120" height="37"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -52,25 +52,45 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Credit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="IJt-Zf-30X">
-                                <rect key="frame" x="20" y="233" width="115" height="21"/>
+                                <rect key="frame" x="20" y="216" width="120" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unknown" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="11s-99-cge">
-                                <rect key="frame" x="136" y="233" width="164" height="21"/>
+                                <rect key="frame" x="143" y="216" width="157" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="99E-Mw-CyW">
+                                <rect key="frame" x="20" y="245" width="120" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshCredit:" destination="wbe-qv-ZQT" eventType="touchUpInside" id="wwf-hB-lDB"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="okW-U5-4Vt">
+                                <rect key="frame" x="242" y="208" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="20-gear2.png" id="TtS-Xw-WRG"/>
                     <connections>
                         <outlet property="creditRemaining" destination="11s-99-cge" id="XjG-hV-Iei"/>
+                        <outlet property="loadingSpinner" destination="okW-U5-4Vt" id="hfD-F3-H7a"/>
                         <outlet property="messageSwitch" destination="nRQ-2S-VD7" id="r4Y-2H-6X1"/>
                         <outlet property="passwordBox" destination="7iG-hf-pzl" id="HmC-0G-Dmc"/>
                         <outlet property="sentText" destination="t9z-nv-ljh" id="3xK-2d-b9u"/>
@@ -228,7 +248,9 @@
         <class className="FlipsideViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipsideViewController.h"/>
             <relationships>
+                <relationship kind="action" name="refreshCredit:"/>
                 <relationship kind="outlet" name="creditRemaining" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loadingSpinner" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="messageSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="passwordBox" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="sentText" candidateClass="UITextField"/>

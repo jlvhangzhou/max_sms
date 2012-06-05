@@ -23,12 +23,14 @@
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic) BOOL oneMessage;
 @property (nonatomic, strong) NSString *sentFrom;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingSpinner;
 
 @property (nonatomic, strong) IBOutlet UITextField *usernameBox;
 @property (nonatomic, strong) IBOutlet UITextField *passwordBox;
 @property (nonatomic, strong) IBOutlet UISwitch *messageSwitch;
 @property (strong, nonatomic) IBOutlet UITextField *sentText;
 @property (weak, nonatomic) IBOutlet UILabel *creditRemaining;
+- (IBAction)refreshCredit:(id)sender;
 
 @end
 
