@@ -28,6 +28,7 @@
 @property (nonatomic, strong) IBOutlet UITextField *passwordBox;
 @property (nonatomic, strong) IBOutlet UISwitch *messageSwitch;
 @property (strong, nonatomic) IBOutlet UITextField *sentText;
+@property (weak, nonatomic) IBOutlet UILabel *creditRemaining;
 
 @end
 

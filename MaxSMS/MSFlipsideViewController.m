@@ -8,6 +8,9 @@
 
 #import "MSFlipsideViewController.h"
 
+#import "AFHTTPClient.h"
+#import "AFHTTPRequestOperation.h"
+
 #import "MSAppDelegate.h"
 
 
@@ -22,6 +25,7 @@
 @synthesize passwordBox;
 @synthesize messageSwitch;
 @synthesize sentText;
+@synthesize creditRemaining;
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -70,10 +74,38 @@
     passwordBox.delegate = self;
     sentText.delegate = self;
     
+    // TODO: this shouldn't exist at all. Use viewdidappear: to get and set values.
     AppDelegate.sentFromText2 = sentText;
 
     // on toggle, call toggle_message
     [messageSwitch addTarget:self action:@selector(toggle_message) forControlEvents:UIControlEventValueChanged];
+    
+    // Send a request for current usage    
+    // username, password, country = AU
+    // returns CREDITS:8658.44;COUNTRY:AU;SMS:3764.54;
+    // or returns some error stuff...
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                          username, @"user",
+                          password, @"password",
+                          @"AU", @"country",
+                          nil];
+    
+    AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://www.smsglobal.com/"]];
+    NSMutableURLRequest *request = [client requestWithMethod:@"GET" path:@"credit-api.php" parameters:params];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // Object 1 at index is the country, not useful.
+        NSArray *vals = [[operation responseString] componentsSeparatedByString:@";"];
+        
+        creditRemaining.text = [NSString stringWithFormat:@"%@ / %@", [vals objectAtIndex:0], [vals objectAtIndex:2]];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", [operation error]);
+    }];
+    
+    [operation start];
 }
 
 
@@ -86,6 +118,7 @@
 
 
 - (void)viewDidUnload {
+    [self setCreditRemaining:nil];
     [self setSentText:nil];
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
