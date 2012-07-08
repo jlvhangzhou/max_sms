@@ -24,8 +24,16 @@
 		59767CBF1577E1A900C8A595 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 59767CBE1577E1A900C8A595 /* button.png */; };
 		59AFC61814A61C5400061A8D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AFC61614A61C5400061A8D /* AddressBook.framework */; };
 		59AFC61914A61C5400061A8D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AFC61714A61C5400061A8D /* AddressBookUI.framework */; };
-		59AFC61C14A62AD900061A8D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59AFC61B14A62AD900061A8D /* icon.png */; };
-		59AFC61E14A62ADD00061A8D /* icon@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 59AFC61D14A62ADD00061A8D /* icon@2.png */; };
+		59BE646C15A960CE006AA9F8 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646215A960CE006AA9F8 /* Icon-Small-50@2x.png */; };
+		59BE646D15A960CE006AA9F8 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646315A960CE006AA9F8 /* Icon-Small-50.png */; };
+		59BE646E15A960CE006AA9F8 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646415A960CE006AA9F8 /* iTunesArtwork@2x.png */; };
+		59BE646F15A960CE006AA9F8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646515A960CE006AA9F8 /* Icon@2x.png */; };
+		59BE647015A960CE006AA9F8 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646615A960CE006AA9F8 /* Icon-72@2x.png */; };
+		59BE647115A960CE006AA9F8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646715A960CE006AA9F8 /* Icon.png */; };
+		59BE647215A960CE006AA9F8 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646815A960CE006AA9F8 /* Icon-Small@2x.png */; };
+		59BE647315A960CE006AA9F8 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646915A960CE006AA9F8 /* Icon-72.png */; };
+		59BE647415A960CE006AA9F8 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646A15A960CE006AA9F8 /* Icon-Small.png */; };
+		59BE647515A960CE006AA9F8 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 59BE646B15A960CE006AA9F8 /* iTunesArtwork */; };
 		59C835C91571E0A100BDB7B7 /* txture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59C835C81571E0A100BDB7B7 /* txture@2x.png */; };
 		59E684EE1457F0E90027F64C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 59E684ED1457F0E90027F64C /* README.md */; };
 		59E684F61457F2E30027F64C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59E684F51457F2E30027F64C /* Settings.bundle */; };
@@ -58,8 +66,16 @@
 		59767CBE1577E1A900C8A595 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		59AFC61614A61C5400061A8D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		59AFC61714A61C5400061A8D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		59AFC61B14A62AD900061A8D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
-		59AFC61D14A62ADD00061A8D /* icon@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2.png"; path = "../icon@2.png"; sourceTree = "<group>"; };
+		59BE646215A960CE006AA9F8 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		59BE646315A960CE006AA9F8 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		59BE646415A960CE006AA9F8 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		59BE646515A960CE006AA9F8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		59BE646615A960CE006AA9F8 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		59BE646715A960CE006AA9F8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		59BE646815A960CE006AA9F8 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		59BE646915A960CE006AA9F8 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		59BE646A15A960CE006AA9F8 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		59BE646B15A960CE006AA9F8 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		59C835C81571E0A100BDB7B7 /* txture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "txture@2x.png"; sourceTree = "<group>"; };
 		59E684EC1457F0E30027F64C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		59E684ED1457F0E90027F64C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -148,8 +164,7 @@
 		598654641571DC260073F0FD /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				59AFC61D14A62ADD00061A8D /* icon@2.png */,
-				59AFC61B14A62AD900061A8D /* icon.png */,
+				59BE63CE15A95651006AA9F8 /* Icon */,
 				23E30C67157128C600C84A73 /* txture.png */,
 				59C835C81571E0A100BDB7B7 /* txture@2x.png */,
 				236A575C1571D1E700EF7B09 /* 08-chat.png */,
@@ -158,6 +173,23 @@
 				236A575F1571D1E700EF7B09 /* 20-gear2@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		59BE63CE15A95651006AA9F8 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				59BE646215A960CE006AA9F8 /* Icon-Small-50@2x.png */,
+				59BE646315A960CE006AA9F8 /* Icon-Small-50.png */,
+				59BE646415A960CE006AA9F8 /* iTunesArtwork@2x.png */,
+				59BE646515A960CE006AA9F8 /* Icon@2x.png */,
+				59BE646615A960CE006AA9F8 /* Icon-72@2x.png */,
+				59BE646715A960CE006AA9F8 /* Icon.png */,
+				59BE646815A960CE006AA9F8 /* Icon-Small@2x.png */,
+				59BE646915A960CE006AA9F8 /* Icon-72.png */,
+				59BE646A15A960CE006AA9F8 /* Icon-Small.png */,
+				59BE646B15A960CE006AA9F8 /* iTunesArtwork */,
+			);
+			name = Icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +247,6 @@
 				5903A6FC1457EFCA00360325 /* InfoPlist.strings in Resources */,
 				59E684EE1457F0E90027F64C /* README.md in Resources */,
 				59E684F61457F2E30027F64C /* Settings.bundle in Resources */,
-				59AFC61C14A62AD900061A8D /* icon.png in Resources */,
-				59AFC61E14A62ADD00061A8D /* icon@2.png in Resources */,
 				23E30C68157128C600C84A73 /* txture.png in Resources */,
 				236A575A1571CC9000EF7B09 /* Storyboard.storyboard in Resources */,
 				236A57601571D1E700EF7B09 /* 08-chat.png in Resources */,
@@ -225,6 +255,16 @@
 				236A57631571D1E700EF7B09 /* 20-gear2@2x.png in Resources */,
 				59C835C91571E0A100BDB7B7 /* txture@2x.png in Resources */,
 				59767CBF1577E1A900C8A595 /* button.png in Resources */,
+				59BE646C15A960CE006AA9F8 /* Icon-Small-50@2x.png in Resources */,
+				59BE646D15A960CE006AA9F8 /* Icon-Small-50.png in Resources */,
+				59BE646E15A960CE006AA9F8 /* iTunesArtwork@2x.png in Resources */,
+				59BE646F15A960CE006AA9F8 /* Icon@2x.png in Resources */,
+				59BE647015A960CE006AA9F8 /* Icon-72@2x.png in Resources */,
+				59BE647115A960CE006AA9F8 /* Icon.png in Resources */,
+				59BE647215A960CE006AA9F8 /* Icon-Small@2x.png in Resources */,
+				59BE647315A960CE006AA9F8 /* Icon-72.png in Resources */,
+				59BE647415A960CE006AA9F8 /* Icon-Small.png in Resources */,
+				59BE647515A960CE006AA9F8 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +318,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -293,6 +334,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -303,6 +345,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -312,6 +355,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -324,6 +368,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CODE_SIGN_IDENTITY = "";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MaxSMS/MaxSMS-Prefix.pch";
@@ -342,12 +387,15 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MaxSMS/MaxSMS-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "MaxSMS/MaxSMS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
